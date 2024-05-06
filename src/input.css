@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .snap-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .snap-container {
+        scroll-snap-type: x mandatory;
+        /* Enable vertical scroll snapping */
+        overflow-x: hidden;
+        /* Allow vertical scrolling */
+    }
+
+    .snap-item {
+        scroll-snap-align: start;
+        /* Snap items to the start of the container */
+    }
+}
