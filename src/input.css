@@ -14,11 +14,11 @@
 
     .custom-container {
         position: relative;
-        height: 100vh;
+        height: 400vh;
     }
 
     canvas {
-        position: absolute;
+        position: fixed;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
@@ -26,20 +26,10 @@
         max-height: 100vh;
     }
 
-    .top,
-    .bottom {
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-        align-items: center;
-        background-color: #333;
-        height: 70vh;
-        padding: 20px;
-        font-size: 24px;
-        color: white;
+    /* For .sec section */
+    .sec {
+        @apply relative bg-white p-20;
+        /* Adjust padding as needed */
     }
 
-    .bottom {
-        height: 150vh;
-    }
 }
