@@ -48,7 +48,8 @@
                 <div class="flex items-center">
                     <div class="flex items-center ms-3">
                         <a href="#skip">
-                            <button type="button" aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                            <button data-tooltip-target="tooltip-default" data-tooltip-placement="left" type="button"
+                                aria-expanded="false" data-dropdown-toggle="dropdown-user">
                                 <svg class="w-8 h-8 text-black dark:text-white" data-slot="icon" fill="none"
                                     stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -59,13 +60,19 @@
                             </button>
                         </a>
                     </div>
+
+                    <div id="tooltip-default" role="tooltip"
+                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        To skip the cutscenes
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
     <div class="custom-container">
-        <canvas width="600" height="338" id="image-sequence"></canvas>
+        <canvas width="600" height="338" id="image-sequence" class="rounded-2xl"></canvas>
     </div>
 
     <div id="skip" class="sec">
@@ -83,9 +90,9 @@
             gsap.registerPlugin(ScrollTrigger)
             // looking for a non-scrubbing version? https://codepen.io/GreenSock/pen/QWYdgjG
 
-            let frameCount = 350,
+            let frameCount = 259,
                 urls = new Array(frameCount).fill().map((o, i) =>
-                    `../assets/test_2/frame_${(i+1).toString().padStart(3, '0')}_delay-0.05s.gif`);
+                    `../assets/real/frame_${(i+1).toString().padStart(3, '0')}_delay-0.1s.gif`);
 
             imageSequence({
                 urls, // Array of image URLs
@@ -97,12 +104,12 @@
                     scrub: true, // important!
                     onUpdate: self => {
                         // When the scrolling animation completes
-                        if (self.progress > 0.85) {
+                        if (self.progress > 0.87) {
                             // Animate the opacity of the image sequence to 0
                             gsap.to("#image-sequence", {
                                 opacity: 0
                             });
-                        } else if (self.progress < 0.85) {
+                        } else if (self.progress < 0.87) {
                             gsap.to("#image-sequence", {
                                 opacity: 1
                             });
