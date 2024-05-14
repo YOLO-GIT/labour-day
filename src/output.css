@@ -1121,7 +1121,6 @@ canvas {
 }
 
 .box {
-  position: relative;
   width: 200px;
   height: 200px;
 }
@@ -1226,6 +1225,10 @@ canvas {
 
 .me-3 {
   margin-inline-end: 0.75rem;
+}
+
+.ml-auto {
+  margin-left: auto;
 }
 
 .mr-auto {
@@ -1635,6 +1638,10 @@ canvas {
 
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .font-mono {
