@@ -157,8 +157,8 @@
                 canvas: "#image-sequence", // <canvas> object to draw images to
                 clear: true, // only necessary if your images contain transparency
                 scrollTrigger: {
-                    start: "top center", // start at the very top
-                    end: "bottom center", // entire page
+                    start: "0", // start at the very top
+                    end: "bottom bottom", // entire page
                     scrub: true, // important!
                     onUpdate: self => {
                         // When the scrolling animation completes
