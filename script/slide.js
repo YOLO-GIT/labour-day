@@ -13,7 +13,7 @@
          clear: true, // only necessary if your images contain transparency
          scrollTrigger: {
              start: "0", // start at the very top
-             end: "bottom bottom", // entire page
+             end: "max", // entire page
              scrub: true, // important!
              onUpdate: self => {
                  // When the scrolling animation completes
