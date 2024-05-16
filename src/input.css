@@ -219,4 +219,40 @@
     .animate-fadeInDown {
         animation: fadeInDown 0.5s ease-in-out;
     }
+
+    .animate-marquee {
+        animation: marquee 25s linear infinite;
+        display: flex;
+        transition: ease-in;
+    }
+
+    .animate-marquee:hover {
+        animation-play-state: paused;
+    }
+
+    .marquee-container {
+        position: relative;
+        display: flex;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        border: 1px solid #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(58, 58, 58, 0.19);
+        /* Adjusted for a better fit with the text */
+        border-radius: 9999px;
+        /* Full rounded corners */
+        background: linear-gradient(145deg, #fdfdfd, #fcfffb);
+        padding: 0.5rem;
+        /* Added padding for a better look */
+    }
+
+    .marquee-text {
+        font-size: 1.5rem;
+        /* Adjusted to be more readable */
+        font-weight: bold;
+        /* Bolder text */
+        color: darkred;
+        /* Darker text color */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        /* Subtle text shadow */
+    }
 }

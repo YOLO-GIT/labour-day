@@ -1243,6 +1243,15 @@ canvas {
   transform: translate(0%, 0%);
 }
 
+.transition-fade {
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+  transition: 1500ms;
+}
+
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -1253,6 +1262,42 @@ canvas {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+  display: flex;
+  transition: ease-in;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.marquee-container {
+  position: relative;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border: 1px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(58, 58, 58, 0.19);
+  /* Adjusted for a better fit with the text */
+  border-radius: 9999px;
+  /* Full rounded corners */
+  background: linear-gradient(145deg, #fdfdfd, #fcfffb);
+  padding: 0.5rem;
+  /* Added padding for a better look */
+}
+
+.marquee-text {
+  font-size: 1.5rem;
+  /* Adjusted to be more readable */
+  font-weight: bold;
+  /* Bolder text */
+  color: darkred;
+  /* Darker text color */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  /* Subtle text shadow */
 }
 
 .visible {
@@ -1325,6 +1370,11 @@ canvas {
 
 .z-50 {
   z-index: 50;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .mx-auto {
@@ -1419,6 +1469,10 @@ canvas {
 
 .h-10 {
   height: 2.5rem;
+}
+
+.h-14 {
+  height: 3.5rem;
 }
 
 .h-4 {
@@ -1521,6 +1575,20 @@ canvas {
 
 .transform-none {
   transform: none;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
 }
 
 .cursor-default {
@@ -1889,10 +1957,6 @@ canvas {
   font-weight: 800;
 }
 
-.font-light {
-  font-weight: 300;
-}
-
 .font-medium {
   font-weight: 500;
 }
@@ -1948,6 +2012,11 @@ canvas {
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.text-slate-900 {
+  --tw-text-opacity: 1;
+  color: rgb(15 23 42 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -2127,6 +2196,14 @@ canvas {
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
 }
 
+.group:hover .group-hover\:block {
+  display: block;
+}
+
+.group:hover .group-hover\:hidden {
+  display: none;
+}
+
 .dark\:border-blue-500:is(.dark *) {
   --tw-border-opacity: 1;
   border-color: rgb(63 131 248 / var(--tw-border-opacity));
@@ -2293,10 +2370,6 @@ canvas {
   .lg\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
-  }
-
-  .lg\:mb-8 {
-    margin-bottom: 2rem;
   }
 
   .lg\:mt-0 {
