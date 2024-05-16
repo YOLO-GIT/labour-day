@@ -8,9 +8,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         .fill()
         .map(
             (o, i) =>
-            `../../assets/real/frame_${(i + 1)
-            .toString()
-            .padStart(3, "0")}_delay-0.1s.gif`
+            `../../assets/real/frame_${(i + 1)}_delay-0.1s.gif`
         );
 
     imageSequence({
@@ -21,7 +19,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             start: "0", // start at the very top
             end: "center 40%", // entire page
             scrub: true, // important!
-            // markers: true,
             onUpdate: (self) => {
                 // When the scrolling animation completes
                 if (self.progress > 0.87) {
