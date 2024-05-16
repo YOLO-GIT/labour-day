@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     let frameCount = 259;
     let urls = new Array(frameCount).fill().map((o, i) => {
-        let url = `../../assets/real/frame_${(i + 1)}_delay-0.1s.png`;
+        let url = `../assets/real/frame_${(i + 1)}_delay-0.1s.png`;
         console.log(`Image URL: ${url}`); // Debugging: Check the generated URLs
         return url;
     });
