@@ -13,8 +13,9 @@
          clear: true, // only necessary if your images contain transparency
          scrollTrigger: {
              start: "0", // start at the very top
-             end: "max", // entire page
+             end: "center 40%", // entire page
              scrub: true, // important!
+             markers: true,
              onUpdate: self => {
                  // When the scrolling animation completes
                  if (self.progress > 0.87) {
