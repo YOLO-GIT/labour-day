@@ -60,7 +60,7 @@
         </div>
     </nav>
 
-    <div class="custom-container">
+    <div class="hidden custom-container lg:mt-0 lg:col-span-5 lg:flex">
         <canvas width="600" height="338" id="image-sequence" class="rounded-2xl"></canvas>
     </div>
 
@@ -74,9 +74,37 @@
                 <h1 class="text-center sm:text-right max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
                     id="text">
                     Labour Day</h1>
-                <p class="text-center sm:text-right max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg
-                    lg:text-xl dark:text-gray-400">
-                    Respect to all workers around the world :D.</p>
+                <div class="group">
+                    <p
+                        class="text-center sm:text-right mb-6 font-semibold group-hover:hidden text-slate-900 md:text-lg">
+                        Respect to all workers
+                        around the world :D.
+                    </p>
+                    <p
+                        class="text-center sm:text-right mb-6 font-semibold hidden group-hover:block text-slate-900 md:text-lg">
+                        Don't view this site on mobile screen
+                    </p>
+                </div>
+                <p class="text-center sm:text-right mb-6 font-semibold text-slate-900 md:text-lg">
+
+                </p>
+            </div>
+        </div>
+        <div class="marquee-container h-14">
+            <div class="flex animate-marquee whitespace-nowrap">
+                <span class="text-4xl mx-4 marquee-text" id="read">Labour Day is an annual day of
+                    celebration of the achievements of
+                    workers.
+                    It has its origins in the
+                    labour union movement, specifically the eight-hour day movement, which advocated eight hours for
+                    work, eight hours for recreation, and eight hours for rest.</span>
+                <span class="text-4xl mx-4 marquee-text" id="read_two">Labour Day is an annual day of celebration of
+                    the ac<span id="secret_one">h</span>ievem<span id="secret_two">e</span>nts of
+                    workers. It has its origins in the <span id="secret_three">l</span>abour union movement, s<span
+                        id="secret_four">p</span>ecifically the
+                    eight-hour day <span id="secret_five">m</span>ovem<span id="secret_six">e</span>nt, which
+                    advocated eight hours for
+                    work, eight hours for recreation, and eight hours for rest.</span>
             </div>
         </div>
     </section>
@@ -89,9 +117,13 @@
                     id="text_two">
                     Labour Day
                 </h1>
-                <p class="text-center sm:text-left max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl">
-                    Without them, the world will be in utter chaos. (Not exaggerating.)
-                </p>
+                <div class="group">
+                    <p class="text-center sm:text-left mb-6 font-semibold group-hover:hidden text-white">
+                        Without them, the world will be in utter chaos. (Not exaggerating.)</p>
+                    <p class="text-center sm:text-left mb-6 font-semibold hidden group-hover:block 
+                         text-white transition-fade">
+                        And, yes, I know. Labour Day has already passed. Don't remind me about it 😔</p>
+                </div>
             </div>
             <!-- Content Two -->
             <div class="lg:col-span-5 flex flex-row justify-center">
@@ -107,6 +139,34 @@
         </div>
     </section>
 
+    <!-- Secret One -->
+    <section class="flex flex-row justify-center bg-slate-900">
+        <!-- Button For Secret -->
+        <button id="toggleButton"
+            class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium hover:text-slate-50 text-slate-900">
+            <span
+                class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-slate-900 rounded-md group-hover:bg-opacity-0">
+                You found me :D
+            </span>
+        </button>
+    </section>
+
+    <!-- Secret Two -->
+    <section id="secretTwo" class="bg-slate-900 hidden">
+        <!-- Description -->
+        <div class="text-center py-8 sm:py-16 lg:px-6 animate-fadeInDown">
+            <div class="mt-4 md:mt-0">
+                <div class="group">
+                    <h2 class="mb-4 text-4xl group-hover:hidden tracking-tight font-extrabold text-slate-900">
+                        Click
+                        Me</h2>
+                    <a href="5ebe2294ecd0e0f08eab7690d2a6ee69/fd94c6a26d6b6571e8d9398446227ae8.html" class="mb-4 text-4xl hidden group-hover:block
+                        tracking-tight font-extrabold text-slate-900">
+                        For Secret</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="sec bg-slate-50">
         <div class="sm:delay-[300ms] sm:duration-[600ms] sm:taos:translate-x-[200px] sm:taos:opacity-0"
@@ -213,6 +273,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="script/custom.js"></script>
     <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
     <!-- <script type="module" src="script/slide.js"></script> -->
     <script>
