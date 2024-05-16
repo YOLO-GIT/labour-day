@@ -1,15 +1,13 @@
-// use a script tag or an external JS file
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger);
     // looking for a non-scrubbing version? https://codepen.io/GreenSock/pen/QWYdgjG
 
-    let frameCount = 259,
-        urls = new Array(frameCount)
-        .fill()
-        .map(
-            (o, i) =>
-            `../../assets/real/frame_${(i + 1)}_delay-0.1s.png`
-        );
+    let frameCount = 259;
+    let urls = new Array(frameCount).fill().map((o, i) => {
+        let url = `../../assets/real/frame_${(i + 1)}_delay-0.1s.png`;
+        console.log(`Image URL: ${url}`); // Debugging: Check the generated URLs
+        return url;
+    });
 
     imageSequence({
         urls, // Array of image URLs
@@ -40,35 +38,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
         opacity: 1,
     });
 
-    /*
-       Helper function that handles scrubbing through a sequence of images, drawing the appropriate one to the
-       provided canvas.
-       Config object properties:
-       - urls [Array]: an Array of image URLs
-       - canvas [Canvas]: the <canvas> object to draw to
-           - scrollTrigger [Object]: an optional ScrollTrigger configuration object like {trigger: "#trigger",
-           start: "top top", end: "+=1000", scrub: true, pin: true}
-           - clear [Boolean]: if true, it'll clear out the canvas before drawing each frame (useful if your
-           images contain transparency)
-           - paused [Boolean]: true if you'd like the returned animation to be paused initially (this isn't
-           necessary if you're passing in a ScrollTrigger that's scrubbed, but it is helpful if you just want a
-           normal playback animation)
-           - fps [Number]: optional frames per second - this determines the duration of the returned animation.
-           This doesn't matter if you're using a scrubbed ScrollTrigger. Defaults to 30fps.
-           - onUpdate [Function]: optional callback for when the Tween updates (probably not used very often).
-           It'll pass two parameters: 1) the index of the image (zero-based), and 2) the Image that was drawn to
-           the canvas
-
-           Returns a Tween instance
-           */
     function imageSequence(config) {
         let playhead = {
                 frame: 0,
             },
-            canvas =
-            gsap.utils.toArray(config.canvas)[0] ||
-            console.warn("canvas not defined"),
-            ctx = canvas.getContext("2d"),
+            canvas = document.querySelector(config.canvas);
+        if (!canvas) {
+            console.error("Canvas not found"); // Debugging: Check if canvas exists
+            return;
+        }
+        let ctx = canvas.getContext("2d"),
             curFrame = -1,
             onUpdate = config.onUpdate,
             images,
@@ -85,7 +64,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
         images = config.urls.map((url, i) => {
             let img = new Image();
             img.src = url;
-            i || (img.onload = updateImage);
+            img.onload = () => {
+                console.log(`Image ${i + 1} loaded`); // Debugging: Check if images load
+                if (i === 0) {
+                    updateImage(); // Ensure first image draws immediately
+                }
+            };
+            img.onerror = () => {
+                console.error(`Image ${i + 1} failed to load: ${url}`); // Debugging: Handle load errors
+            };
             return img;
         });
         return gsap.to(playhead, {
