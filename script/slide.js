@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         .fill()
         .map(
             (o, i) =>
-            `../assets/real/frame_${(i + 1)
+             `../assets/real/frame_${(i + 1)
             .toString()
             .padStart(3, "0")}_delay-0.1s.gif`
         );
