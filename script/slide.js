@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger);
     // looking for a non-scrubbing version? https://codepen.io/GreenSock/pen/QWYdgjG
 
-    let frameCount = 259,
+    let frameCount = 260,
         urls = new Array(frameCount)
         .fill()
         .map(
             (o, i) =>
-            `../assets/real/frame_${(i + 1)}_delay-0.1s.gif`
+            `frame_${(i + 1)}_delay-0.1s.png`
         );
 
     imageSequence({
