@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         .fill()
         .map(
             (o, i) =>
-            `frame_${(i + 1)}_delay-0.1s.png`
+            `frame_${(i + 1)}_delay-0.1s.gif`
         );
 
     imageSequence({
