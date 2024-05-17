@@ -1302,21 +1302,6 @@ html.is-animating .transition-fade {
   animation-play-state: paused;
 }
 
-.marquee-container {
-  position: relative;
-  display: flex;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  border: 1px solid #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(58, 58, 58, 0.19);
-  /* Adjusted for a better fit with the text */
-  border-radius: 9999px;
-  /* Full rounded corners */
-  background: linear-gradient(145deg, #fdfdfd, #fcfffb);
-  padding: 0.5rem;
-  /* Added padding for a better look */
-}
-
 .marquee-text {
   font-size: 1.5rem;
   /* Adjusted to be more readable */
@@ -1695,10 +1680,6 @@ html.is-animating .transition-fade {
 
 .h-10 {
   height: 2.5rem;
-}
-
-.h-14 {
-  height: 3.5rem;
 }
 
 .h-2 {
@@ -3929,6 +3910,23 @@ html.is-animating .transition-fade {
   }
 }
 
+@media (min-width: 1024px) {
+  .lg\:marquee-container {
+    position: relative;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border: 1px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(58, 58, 58, 0.19);
+    /* Adjusted for a better fit with the text */
+    border-radius: 9999px;
+    /* Full rounded corners */
+    background: linear-gradient(145deg, #fdfdfd, #fcfffb);
+    padding: 0.5rem;
+    /* Added padding for a better look */
+  }
+}
+
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -4271,8 +4269,20 @@ html.is-animating .transition-fade {
     margin-top: 1rem;
   }
 
+  .lg\:mt-2 {
+    margin-top: 0.5rem;
+  }
+
+  .lg\:mt-2\.5 {
+    margin-top: 0.625rem;
+  }
+
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:h-14 {
+    height: 3.5rem;
   }
 
   .lg\:grid-cols-12 {
