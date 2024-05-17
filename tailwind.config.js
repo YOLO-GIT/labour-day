@@ -11,7 +11,7 @@ module.exports = {
                         transform: 'translateX(0)'
                     },
                     '100%': {
-                        transform: 'translateX(-70%)'
+                        transform: 'translateX(-81%)'
                     },
                 },
             },
